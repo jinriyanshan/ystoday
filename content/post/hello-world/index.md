@@ -1,8 +1,8 @@
 ---
 title: 欢迎来到今日燕山！
-description: Welcome to Hugo Theme Stack
-slug: hello-world
-date: 2022-03-06 00:00:00+0000
+description: 致力于燕房地区的咨询沟通，致力于安全环保欣喜的普及；深度挖掘燕山独特的历史文化，以燕山的视角看世界，以世界的眼光看燕山！
+slug: welcome
+date: 2026-02-04 00:00:00+0000
 image: cover.jpg
 categories:
     - Example Category
