@@ -17,7 +17,7 @@ icon = "home"
 
 [[social]]
     identifier = "twitter"
-    name       = "Twitter"
+    name       = "X"
     url        = "https://twitter.com"
 
     [social.params]
