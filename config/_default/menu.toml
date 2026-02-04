@@ -1,11 +1,11 @@
-# Configure main menu and social menu
+Configure main menu and social menu
 [[main]]
 identifier = "home"
 name = "首页"
 url = "/"
-#[main.params]
-#icon = "home"
-#newtab = true
+[main.params]
+icon = "home"
+newtab = true
 
 [[social]]
     identifier = "github"
