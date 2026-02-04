@@ -4,7 +4,7 @@ identifier = "home"
 name = "首页"
 url = "/"
 [main.params]
-icon = "home"
+icon = "首页"
 newtab = true
 
 [[social]]
