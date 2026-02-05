@@ -1,11 +1,4 @@
 # Configure main menu and social menu
-[[main]]
-name = "首页"
-url = "/"
-identifier = "home"
-weight = -100
-[main.params]
-icon = "home"
 
 [[social]]
     identifier = "github"
