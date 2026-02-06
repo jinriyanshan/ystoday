@@ -25,3 +25,20 @@ favicon = "img/jryslogo.jpg"
         { type = "archives", params = { limit = 5 } }
     ]
     page = [{ type = "toc" }]
+
+[comments]
+    enabled  = true
+    provider = "giscus"
+
+    [comments.giscus]
+        repo = "jinriyanshan/ystoday"
+        repoId = "R_kgDORIoO7g"
+        category = "General"
+        categoryId = "DIC_kwDORIoO7s4C1-Yt"
+        mapping = "pathname"
+        strict = "0"
+        reactionsEnabled = "1"
+        emitMetadata = "0"
+        inputPosition = "bottom"
+        theme = "preferred_color_scheme"
+        lang = "zh-CN"
