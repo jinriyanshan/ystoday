@@ -1,31 +1,31 @@
 [[main]]
-    name = "Home"
     identifier = "home"
+    name = "Home"
     url = "/"
-    weight = 10
+    weight = 1
     [main.params]
         icon = "home"
 
 [[main]]
-    name = "Archives"
     identifier = "archives"
+    name = "Archives"
     url = "/archives/"
-    weight = 20
+    weight = 2
     [main.params]
         icon = "archive"
 
 [[main]]
-    name = "Search"
     identifier = "search"
+    name = "Search"
     url = "/search/"
-    weight = 30
+    weight = 3
     [main.params]
         icon = "search"
 
 [[main]]
-    name = "Links"
     identifier = "links"
+    name = "Links"
     url = "/links/"
-    weight = 40
+    weight = 4
     [main.params]
         icon = "link"
