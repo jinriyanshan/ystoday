@@ -15,7 +15,7 @@
 
 [[main]]
     identifier = "home"
-    name = "Home"
+    name = "首页"
     url = "/"
     weight = 1
     params =
@@ -23,7 +23,7 @@
 
 [[main]]
     identifier = "archives"
-    name = "Archives"
+    name = "归档"
     url = "/archives/"
     weight = 2
     params =
