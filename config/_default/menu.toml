@@ -37,3 +37,8 @@
     weight = 5
     [main.params]
         icon = "messages"
+
+[[menu.main]]
+    name = "软件下载"
+    pageRef = "/page/download"
+    weight = 6
