@@ -1,57 +1,27 @@
-# Pages placed under these sections will be shown on homepage and archive page.
-mainSections = ["post"]
-# Output page's full content in RSS.
-rssFullContent = true
-favicon        = "img/favicon.png"
-
-# Accepted values: "default", "lastmod"
-# default = see https://gohugo.io/quick-reference/glossary/#default-sort-order
-# lastmod = sort by last modified date, in descending order
-SortBy              = "default"
+# 网站图标（暂时留空或指向你的logo）
+favicon = "img/jryslogo.jpg"
 
 [footer]
-    since      = 2020
-    customText = ""
-
-[dateFormat]
-    published   = ":date_full"
-    lastUpdated = ":date_full"
+    since = 2024
+    customText = "今日燕山 - 燕山人的精神家园"
 
 [sidebar]
-    emoji    = "🍥"
-    subtitle = "今日燕山"
-    avatar   = "img/jryslogo.jpg" 
+    emoji = ""
+    subtitle = "致力于燕房地区的咨询沟通，深度挖掘燕山独特的历史文化，以燕山的视角看世界，以世界的眼光看燕山！"
+    avatar = "img/jryslogo.jpg" 
 
 [article]
-    headingAnchor = false
-    math          = false
-    readingTime   = true
-
+    readingTime = false
     [article.license]
-        enabled = true
-        default = "Licensed under CC BY-NC-SA 4.0"
+        enabled = false
+
+[colorScheme]
+    toggle = false
+    default = "auto"
 
 [widgets]
     homepage = [
         { type = "search" },
-        { type = "archives", params = { limit = 5 } },
-        { type = "categories", params = { limit = 10 } },
-        { type = "tag-cloud", params = { limit = 10 } },
+        { type = "archives", params = { limit = 5 } }
     ]
     page = [{ type = "toc" }]
-
-[opengraph.twitter]
-    site = ""
-    card = "summary_large_image"
-
-[colorScheme]
-    toggle  = true
-    default = "auto"
-
-## Comments
-[comments]
-    enabled  = true
-    provider = "disqus"
-
-    # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
-    # Copy the configurations you need from there and paste it here.
