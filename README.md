@@ -6,7 +6,7 @@ This is a quick start template for [Hugo theme Stack](https://github.com/CaiJimm
 
 It comes with a basic theme structure and configuration. GitHub action has been set up to deploy the theme to a public GitHub page automatically. Also, there's a cron job to update the theme automatically everyday.
 
-## Video Tutorial
+## Video Tutorial 
 
 In case you got lost during the setup process, here's a video tutorial that setups a new Hugo site using this template, and deploys it to GitHub Pages: https://www.youtube.com/watch?v=8qDdQQ6Ifxo
 
