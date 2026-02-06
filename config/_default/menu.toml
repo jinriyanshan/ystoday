@@ -1,23 +1,23 @@
 [[main]]
     identifier = "home"
-    name = "Home"
+    name = "首页"
     url = "/"
     weight = 1
 
 [[main]]
     identifier = "archives"
-    name = "Archives"
+    name = "归档"
     url = "/archives/"
     weight = 2
 
 [[main]]
     identifier = "search"
-    name = "Search"
-    url = "/search/"
+    name = "搜索"
+    url = "/"
     weight = 3
 
 [[main]]
     identifier = "links"
-    name = "Links"
-    url = "/links/"
+    name = "链接"
+    url = "/"
     weight = 4
