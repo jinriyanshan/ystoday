@@ -12,3 +12,35 @@
   url = "https://twitter.com"
   [social.params]
     icon = "brand-twitter"
+
+[[main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+    params =
+        icon = "home"
+
+[[main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
+    weight = 2
+    params =
+        icon = "archive"
+
+[[main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 3
+    params =
+        icon = "search"
+
+[[main]]
+    identifier = "links"
+    name = "Links"
+    url = "/links/"
+    weight = 4
+    params =
+        icon = "link"
