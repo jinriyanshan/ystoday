@@ -18,7 +18,7 @@ icon = "link"
 [[main]]
 identifier = "bbs"
 name = "燕山论坛"
-url = "/page/bbs"
+url = "/page/bbs/"
 weight = 3
 [main.params]
 icon = "messages"
@@ -26,7 +26,7 @@ icon = "messages"
 [[main]]
 identifier = "download"
 name = "软件下载"
-url = "/page/download"
+url = "/page/download/"
 weight = 4
 [main.params]
 icon = "download"
