@@ -29,4 +29,4 @@ name = "软件下载"
 url = "/page/download"
 weight = 4
 [main.params]
-icon = "cloud"  # 临时用cloud图标，避开download.svg缺失的问题
+icon = "download"  # 临时用cloud图标，避开download.svg缺失的问题
