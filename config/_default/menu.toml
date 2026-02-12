@@ -1,44 +1,47 @@
-[[main]]
+[[menu.main]]
     identifier = "home"
     name = "首页"
     url = "/"
     weight = 1
-    [main.params]
+    [menu.main.params]
         icon = "home"
 
-[[main]]
+[[menu.main]]
     identifier = "archives"
     name = "归档"
     url = "/archives/"
     weight = 2
-    [main.params]
+    [menu.main.params]
         icon = "archives"
 
-[[main]]
+[[menu.main]]
     identifier = "search"
     name = "搜索"
     url = "/search/"
     weight = 3
-    [main.params]
+    [menu.main.params]
         icon = "search"
 
-[[main]]
+[[menu.main]]
     identifier = "links"
     name = "链接"
     url = "/links/"
     weight = 4
-    [main.params]
+    [menu.main.params]
         icon = "link"
 
-[[main]]
+[[menu.main]]
     identifier = "bbs"
     name = "燕山论坛"
     url = "/page/bbs"
     weight = 5
-    [main.params]
+    [menu.main.params]
         icon = "messages"
 
 [[menu.main]]
+    identifier = "download"
     name = "软件下载"
-    pageRef = "/page/download"
+    url = "/page/download"
     weight = 6
+    [menu.main.params]
+        icon = "download"
