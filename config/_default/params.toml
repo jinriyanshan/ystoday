@@ -43,28 +43,47 @@ favicon = "img/jryslogo.jpg"
         theme = "preferred_color_scheme"
         lang = "zh-CN"
 
-# 全局嵌入 Waline 评论区 + 隐藏 Giscus
+# 全局嵌入 Waline 评论区 + 隐藏 Giscus（修正版）
 customHead = '''
 <style>
   .giscus, #giscus_thread, iframe[src*="giscus"] {
     display: none !important;
     visibility: hidden !important;
   }
+  #waline {
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 </style>
-<div id="waline" style="margin-top: 2rem; padding: 1rem;"></div>
 <script type="module">
-  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.mjs";
-  init({
-    el: "#waline",
-    serverURL: "https://waline-server-bay-two.vercel.app",
-    dark: "auto",
-    locale: {
-      placeholder: "欢迎在燕山旧时光留言～",
-      nick: "昵称",
-      mail: "邮箱（选填）",
-      link: "网址（选填）",
-      submit: "提交评论",
-    },
+  // 等页面完全加载后再创建评论区
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. 创建 Waline 容器并放到页面底部
+    const walineContainer = document.createElement('div');
+    walineContainer.id = 'waline';
+    // 把评论区放到页面主内容后面（或body末尾）
+    const mainContent = document.querySelector('main') || document.body;
+    mainContent.appendChild(walineContainer);
+
+    // 2. 初始化 Waline
+    import("https://unpkg.com/@waline/client@v3/dist/waline.mjs").then(({ init }) => {
+      init({
+        el: "#waline",
+        serverURL: "https://waline-server-bay-two.vercel.app",
+        dark: "auto",
+        locale: {
+          placeholder: "欢迎在燕山旧时光留言～",
+          nick: "昵称",
+          mail: "邮箱（选填）",
+          link: "网址（选填）",
+          submit: "提交评论",
+        },
+      });
+    });
   });
 </script>
 '''
