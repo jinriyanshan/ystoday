@@ -27,7 +27,7 @@ favicon = "img/jryslogo.jpg"
     page = [{ type = "toc" }]
 
 [comments]
-    enabled  = true
+    enabled  = false
     provider = "giscus"
 
     [comments.giscus]
