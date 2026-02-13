@@ -30,3 +30,11 @@ url = "/page/jiuwu/"   # 确保这里和你的文件夹名称一致，并带上�
 weight = 4             # 权重决定排序，你可以根据需要调整
 [main.params]
 icon = "shopping-bag"  # 购物袋图标
+
+[[main]]
+identifier = "phonebook"
+name = "电话黄页"
+url = "/page/phonebook/"
+weight = 5                 # 紧跟在旧物时光（weight 4）后面
+[main.params]
+icon = "phone"             # 使用电话图标
