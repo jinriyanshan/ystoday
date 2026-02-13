@@ -2,7 +2,7 @@
 [zh-cn]
     languageName      = "中文"
     languagedirection = "ltr"
-    title             = "今日燕山"  # 这里改成你站点的名称，也可以保留原Example Site
+    title             = "燕山旧时光"  # 这里改成你站点的名称，也可以保留原Example Site
     weight            = 1  # weight=1代表默认语言，Hugo优先加载
 
 # [en]
