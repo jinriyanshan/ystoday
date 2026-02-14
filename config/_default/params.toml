@@ -40,7 +40,7 @@ favicon = "img/jryslogo.jpg"
         emitMetadata = "0"
         inputPosition = "bottom"
         theme = "preferred_color_scheme"
-        lang: "zh-CN"
+        lang = "zh-CN"
 
 # 清空 customHead，避免冲突
 customHead = ''''''
