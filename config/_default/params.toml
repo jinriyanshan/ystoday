@@ -43,47 +43,65 @@ favicon = "img/jryslogo.jpg"
         theme = "preferred_color_scheme"
         lang = "zh-CN"
 
-# 全局嵌入 Waline 评论区 + 隐藏 Giscus（修正版）
+# 全局嵌入 Artalk 中文评论区 + 隐藏 Giscus（最终版）
 customHead = '''
 <style>
+  /* 彻底隐藏 Giscus 评论区，避免冲突 */
   .giscus, #giscus_thread, iframe[src*="giscus"] {
     display: none !important;
     visibility: hidden !important;
   }
-  #waline {
+  /* Artalk 评论区样式优化，适配网站布局 */
+  #artalk-container {
     margin-top: 2rem;
     padding: 1rem;
     width: 100%;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
   }
 </style>
-<script type="module">
-  // 等页面完全加载后再创建评论区
-  document.addEventListener('DOMContentLoaded', function() {
-    // 1. 创建 Waline 容器并放到页面底部
-    const walineContainer = document.createElement('div');
-    walineContainer.id = 'waline';
-    // 把评论区放到页面主内容后面（或body末尾）
-    const mainContent = document.querySelector('main') || document.body;
-    mainContent.appendChild(walineContainer);
 
-    // 2. 初始化 Waline
-    import("https://unpkg.com/@waline/client@v3/dist/waline.mjs").then(({ init }) => {
-      init({
-        el: "#waline",
-        serverURL: "https://waline-server-bay-two.vercel.app",
-        dark: "auto",
-        locale: {
-          placeholder: "欢迎在燕山旧时光留言～",
-          nick: "昵称",
-          mail: "邮箱（选填）",
-          link: "网址（选填）",
-          submit: "提交评论",
-        },
-      });
-    });
+<!-- Artalk 评论区容器 -->
+<div id="artalk-container"></div>
+
+<!-- 加载 Artalk 核心样式和脚本 -->
+<link href="https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.js"></script>
+
+<!-- 初始化 Artalk 中文评论区 -->
+<script>
+// 确保页面完全加载后初始化，避免容器找不到
+document.addEventListener('DOMContentLoaded', function() {
+  Artalk.init({
+    el: '#artalk-container',       // 绑定评论区容器
+    server: 'https://artalk.artalkjs.org', // 官方免费公共服务端（无需部署）
+    site: '燕山旧时光',            // 你的网站名称（用于区分评论归属）
+    pageKey: window.location.pathname,    // 按页面路径区分不同文章的评论
+    pageTitle: document.title,            // 显示当前页面标题
+    // 纯中文配置，完全适配你的需求
+    locale: {
+      nick: '昵称',
+      email: '邮箱（选填）',
+      link: '网址（选填）',
+      submit: '提交评论',
+      reply: '回复',
+      edit: '编辑',
+      delete: '删除',
+      like: '点赞',
+      cancel: '取消',
+      confirm: '确认',
+      more: '更多',
+      loading: '加载中...',
+      empty: '暂无评论，快来抢沙发～',
+      placeholder: '欢迎在燕山旧时光留言～'
+    },
+    // 简化输入项，只保留核心字段
+    formItems: ['nick', 'email', 'link', 'content'],
+    // 自动聚焦评论输入框，提升体验
+    autoFocus: true
   });
+});
 </script>
 '''
