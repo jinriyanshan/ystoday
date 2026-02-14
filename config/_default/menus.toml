@@ -1,40 +1,48 @@
-# 只保留首页、链接、燕山论坛、软件下载，删掉搜索和归档
 [[main]]
-identifier = "home"
-name = "首页"
-url = "/"
-weight = 1
-[main.params]
-icon = "home"
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 1
+    [main.params]
+        icon = "home"
 
 [[main]]
-identifier = "links"
-name = "友情链接"
-url = "/links/"
-weight = 5  # 权重调整，保持顺序连贯
-[main.params]
-icon = "link"
+    identifier = "jiuwu"
+    name = "旧物时光"
+    url = "/page/jiuwu/"
+    weight = 2
+    [main.params]
+        icon = "shopping-bag"
 
 [[main]]
-identifier = "bbs"
-name = "燕山论坛"
-url = "/page/bbs/"
-weight = 3
-[main.params]
-icon = "messages"
+    identifier = "bbs"
+    name = "燕山论坛"
+    url = "/page/bbs/"
+    weight = 3
+    [main.params]
+        icon = "messages"
 
 [[main]]
-identifier = "jiuwu"
-name = "旧物时光"
-url = "/page/jiuwu/"   # 确保这里和你的文件夹名称一致，并带上斜杠
-weight = 2             # 权重决定排序，你可以根据需要调整
-[main.params]
-icon = "shopping-bag"  # 购物袋图标
+    identifier = "phonebook"
+    name = "电话黄页"
+    url = "/page/phonebook/"
+    weight = 4
+    [main.params]
+        icon = "phone"
 
 [[main]]
-identifier = "phonebook"
-name = "电话黄页"
-url = "/page/phonebook/"
-weight = 4                 # 紧跟在旧物时光（weight 4）后面
-[main.params]
-icon = "phone"             # 使用电话图标
+    identifier = "links"
+    name = "友情链接"
+    url = "/links/"
+    weight = 5
+    [main.params]
+        icon = "link"
+
+# 找回搜索按钮
+[[main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 6
+    [main.params]
+        icon = "search"
