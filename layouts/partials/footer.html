@@ -1,0 +1,24 @@
+<!-- 网站底部版权信息 -->
+<footer style="text-align:center; margin:2rem 0; padding:1rem; color:#666;">
+  <p>© 燕山旧时光</p>
+</footer>
+
+<!-- Artalk 评论区：纯前端、无依赖、兼容所有静态部署 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.css">
+<div id="artalk-box" style="max-width:800px; margin:0 auto; padding:0 1rem;"></div>
+<script src="https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.js"></script>
+<script>
+// 极简初始化：只保留核心功能，避免任何兼容问题
+document.addEventListener('DOMContentLoaded', function() {
+  Artalk.init({
+    el: '#artalk-box',
+    server: 'https://artalk.artalkjs.org',
+    site: '燕山旧时光',
+    locale: {
+      nick: '昵称',
+      submit: '提交评论',
+      placeholder: '欢迎留言～'
+    }
+  });
+});
+</script>
