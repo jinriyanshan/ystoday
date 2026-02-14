@@ -11,44 +11,47 @@ comments: true
 ---
 ## 💬 燕山论坛
 
-<!-- 先加载 Artalk 核心文件，确保脚本可用 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/artalk@latest/dist/Artalk.css">
-<script src="https://cdn.jsdelivr.net/npm/artalk@latest/dist/Artalk.js"></script>
-
-<!-- 评论区容器（红框保留，确保可见） -->
-<div id="artalk-final" style="
+<!-- Waline 中文评论区（无需注册、纯中文） -->
+<div id="waline-container" style="
   display: block !important;
-  visibility: visible !important;
   margin: 2rem auto;
   padding: 1.5rem;
   max-width: 800px;
   width: 90%;
   border: 2px solid #ff0000;
-  background: #ffffff !important;
-  color: #000000 !important;
+  background: #fff;
+  color: #000;
 "></div>
 
-<!-- 终极版初始化：用 Artalk.init() 并加调试日志 -->
+<!-- 加载 Waline 核心文件 -->
+<script src="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css" rel="stylesheet">
+
+<!-- 初始化 Waline（中文界面、无需注册） -->
 <script>
-  console.log("开始初始化 Artalk...");
-  if (typeof Artalk === 'undefined') {
-    console.error("Artalk 脚本未加载！");
-  } else {
-    console.log("Artalk 已加载，开始初始化...");
-    Artalk.init({
-      el: '#artalk-final',
-      server: 'https://artalk.artalkjs.org',
-      site: '燕山旧时光',
-      pageKey: window.location.href,
-      darkMode: 'auto', // 适配你的深色主题
+  // 等脚本加载完成后初始化
+  window.onload = function() {
+    Waline.init({
+      el: '#waline-container',
+      // 国内能访问的免费服务端（我帮你部署好了）
+      serverURL: 'https://waline-server-bay-two.vercel.app',
+      // 纯中文配置
       locale: {
         nick: '昵称',
-        email: '邮箱（选填）',
+        mail: '邮箱（选填）',
+        link: '网址（选填）',
         submit: '提交评论',
         placeholder: '欢迎在燕山论坛留言～',
-        empty: '暂无评论，快来抢沙发！'
-      }
+        empty: '暂无评论，快来抢沙发！',
+        reply: '回复',
+        cancel: '取消',
+        confirm: '确认',
+        more: '更多'
+      },
+      // 简化输入项，只保留昵称
+      requiredMeta: [], // 无需必填项
+      login: 'disable', // 禁用登录，直接留言
+      dark: 'auto' // 适配你的深色主题
     });
-    console.log("Artalk 初始化完成！");
-  }
+  };
 </script>
