@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="search-container" style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+  <h1>🔍 站内搜索</h1>
+  <p>输入关键词，查找燕山旧时光的内容</p>
+
+  <!-- 搜索框 -->
+  <input 
+    type="text" 
+    id="search-input" 
+    placeholder="输入关键词搜索..."
+    style="
+      width: 100%;
+      padding: 1rem;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      background: #333;
+      color: #fff;
+    "
+  >
+
+  <!-- 搜索结果容器 -->
+  <div id="search-results" style="margin-top: 2rem;"></div>
+</div>
+
+<!-- 纯前端搜索脚本 -->
+<script>
+  // 加载 Hugo 生成的 JSON 索引
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(pages => {
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
+
+      // 监听输入事件，实时搜索
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase().trim();
+        if (query.length < 2) {
+          searchResults.innerHTML = '<p>输入至少2个字符开始搜索</p>';
+          return;
+        }
+
+        // 过滤匹配的页面
+        const results = pages.filter(page => 
+          page.title.toLowerCase().includes(query) || 
+          page.content.toLowerCase().includes(query)
+        );
+
+        // 渲染结果
+        if (results.length === 0) {
+          searchResults.innerHTML = '<p>未找到相关内容</p>';
+        } else {
+          searchResults.innerHTML = `
+            <h3>找到 ${results.length} 条结果：</h3>
+            <ul style="list-style: none; padding: 0;">
+              ${results.map(page => `
+                <li style="margin: 1rem 0; padding: 1rem; border-bottom: 1px solid #444;">
+                  <a href="${page.permalink}" style="color: #66b3ff; font-size: 18px; text-decoration: none;">
+                    ${page.title}
+                  </a>
+                  <p style="color: #aaa; font-size: 14px; margin-top: 0.5rem;">
+                    ${page.content.substring(0, 100)}...
+                  </p>
+                </li>
+              `).join('')}
+            </ul>
+          `;
+        }
+      });
+    })
+    .catch(err => {
+      console.error('搜索索引加载失败:', err);
+      document.getElementById('search-results').innerHTML = '<p>搜索功能暂时不可用</p>';
+    });
+</script>
+{{ end }}
