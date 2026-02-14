@@ -2,7 +2,6 @@
 favicon = "img/jryslogo.jpg"
 
 [footer]
-    # 删掉 since 这一行，年份就不会显示了
     customText = "燕山旧时光"
 
 [sidebar]
@@ -13,10 +12,10 @@ favicon = "img/jryslogo.jpg"
 [article]
     readingTime = false
     [article.license]
-        enabled = false  # 关闭文章底部的英文授权
+        enabled = false
 
 [colorScheme]
-    toggle = false      # 彻底关掉切换按钮
+    toggle = false
     default = "auto"
 
 [widgets]
@@ -43,65 +42,59 @@ favicon = "img/jryslogo.jpg"
         theme = "preferred_color_scheme"
         lang = "zh-CN"
 
-# 全局嵌入 Artalk 中文评论区 + 隐藏 Giscus（最终版）
+# Artalk 中文评论区（修复版：强制显示在页面底部）
 customHead = '''
-<style>
-  /* 彻底隐藏 Giscus 评论区，避免冲突 */
-  .giscus, #giscus_thread, iframe[src*="giscus"] {
-    display: none !important;
-    visibility: hidden !important;
-  }
-  /* Artalk 评论区样式优化，适配网站布局 */
-  #artalk-container {
-    margin-top: 2rem;
-    padding: 1rem;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-</style>
-
-<!-- Artalk 评论区容器 -->
-<div id="artalk-container"></div>
-
-<!-- 加载 Artalk 核心样式和脚本 -->
+<!-- 先加载 Artalk 核心文件 -->
 <link href="https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/artalk@2/dist/Artalk.js"></script>
 
-<!-- 初始化 Artalk 中文评论区 -->
+<!-- 强制显示评论区样式，避免被隐藏 -->
+<style>
+  /* 隐藏 Giscus */
+  .giscus, #giscus_thread, iframe[src*="giscus"] { display: none !important; }
+  /* 评论区容器强制显示 */
+  #artalk-container {
+    display: block !important;
+    visibility: visible !important;
+    margin: 4rem auto 2rem;
+    padding: 2rem;
+    max-width: 800px;
+    width: 90%;
+    border-top: 1px solid #eee;
+  }
+</style>
+
+<!-- 页面加载完成后强制插入评论区 -->
 <script>
-// 确保页面完全加载后初始化，避免容器找不到
-document.addEventListener('DOMContentLoaded', function() {
-  Artalk.init({
-    el: '#artalk-container',       // 绑定评论区容器
-    server: 'https://artalk.artalkjs.org', // 官方免费公共服务端（无需部署）
-    site: '燕山旧时光',            // 你的网站名称（用于区分评论归属）
-    pageKey: window.location.pathname,    // 按页面路径区分不同文章的评论
-    pageTitle: document.title,            // 显示当前页面标题
-    // 纯中文配置，完全适配你的需求
-    locale: {
-      nick: '昵称',
-      email: '邮箱（选填）',
-      link: '网址（选填）',
-      submit: '提交评论',
-      reply: '回复',
-      edit: '编辑',
-      delete: '删除',
-      like: '点赞',
-      cancel: '取消',
-      confirm: '确认',
-      more: '更多',
-      loading: '加载中...',
-      empty: '暂无评论，快来抢沙发～',
-      placeholder: '欢迎在燕山旧时光留言～'
-    },
-    // 简化输入项，只保留核心字段
-    formItems: ['nick', 'email', 'link', 'content'],
-    // 自动聚焦评论输入框，提升体验
-    autoFocus: true
-  });
-});
+// 等待页面完全加载
+window.onload = function() {
+  // 1. 创建评论区容器，插入到 body 最后（确保一定能找到）
+  const artalkDiv = document.createElement('div');
+  artalkDiv.id = 'artalk-container';
+  document.body.appendChild(artalkDiv);
+
+  // 2. 强制初始化 Artalk（忽略任何加载问题）
+  setTimeout(() => {
+    Artalk.init({
+      el: '#artalk-container',
+      server: 'https://artalk.artalkjs.org',
+      site: '燕山旧时光',
+      pageKey: window.location.href,
+      pageTitle: document.title,
+      // 中文配置
+      locale: {
+        nick: '昵称',
+        email: '邮箱（选填）',
+        link: '网址（选填）',
+        submit: '提交评论',
+        placeholder: '欢迎在燕山旧时光留言～',
+        empty: '暂无评论，快来抢沙发～',
+        loading: '加载中...'
+      },
+      // 调试模式：打印日志，方便排查
+      debug: true
+    });
+  }, 500);
+};
 </script>
 '''
