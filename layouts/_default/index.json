@@ -1,10 +1,12 @@
 [
-    {{- range $index, $page := .Site.RegularPages -}}
+    {{- range $index, $page := .Site.AllPages -}}
+    {{- if and (ne $page.Kind "section") (ne $page.Layout "search") (ne $page.Layout "archives") -}}
     {{- if $index -}},{{- end -}}
     {
         "title": {{ $page.Title | jsonify }},
         "content": {{ $page.Plain | jsonify }},
         "permalink": {{ $page.Permalink | jsonify }}
     }
+    {{- end -}}
     {{- end -}}
 ]
