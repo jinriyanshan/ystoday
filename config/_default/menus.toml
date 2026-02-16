@@ -39,14 +39,14 @@
         icon = "link"
 
 [[main]]
-    identifier = "search"
+    identifier = "novel"  # 唯一标识符，不再重复
     name = "小说连载"
-    url = "/search/"
-    weight = 6
+    url = "/novel/"       # 独立路径，和搜索区分开
+    weight = 6            # 调整权重，放在友情链接后、站内搜索前
     [main.params]
-        icon = "search"
+        icon = "book"     # 换个更贴合的图标（书的图标）
 
-    [[main]]
+[[main]]
     identifier = "search"
     name = "站内搜索"
     url = "/search/"
