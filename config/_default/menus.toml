@@ -7,20 +7,20 @@
         icon = "home"
 
 [[main]]
-    identifier = "jiuwu"
-    name = "旧物时光"
-    url = "/page/jiuwu/"
-    weight = 3
-    [main.params]
-        icon = "shopping-bag"
-
-[[main]]
     identifier = "bbs"
     name = "燕山论坛"
     url = "/page/bbs/"
     weight = 2
     [main.params]
         icon = "messages"
+
+[[main]]
+    identifier = "jiuwu"
+    name = "旧物时光"
+    url = "/page/jiuwu/"
+    weight = 3
+    [main.params]
+        icon = "shopping-bag"
 
 [[main]]
     identifier = "phonebook"
@@ -38,11 +38,18 @@
     [main.params]
         icon = "link"
 
-# 找回搜索按钮
 [[main]]
+    identifier = "search"
+    name = "小说连载"
+    url = "/search/"
+    weight = 6
+    [main.params]
+        icon = "search"
+
+    [[main]]
     identifier = "search"
     name = "站内搜索"
     url = "/search/"
-    weight = 6
+    weight = 7
     [main.params]
         icon = "search"
