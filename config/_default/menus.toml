@@ -44,7 +44,7 @@
     url = "/novel/"       # 独立路径，和搜索区分开
     weight = 6            # 调整权重，放在友情链接后、站内搜索前
     [main.params]
-        icon = "book"     # 换个更贴合的图标（书的图标）
+        icon = "novel"     # 换个更贴合的图标（书的图标）
 
 [[main]]
     identifier = "search"
