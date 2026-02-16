@@ -6,36 +6,11 @@
     [main.params]
         icon = "home"
 
-# --- 以下是新增的二级栏目，全部挂在 home 下面 ---
-
-[[main]]
-    parent = "home"      # 锁定父级 ID 为 home
-    identifier = "gallery"
-    name = "燕山美图"
-    url = "/page/gallery/"
-    weight = 1
-
-[[main]]
-    parent = "home"      # 锁定父级 ID 为 home
-    identifier = "featured"
-    name = "精品文章"
-    url = "/page/featured/"
-    weight = 2
-
-[[main]]
-    parent = "home"      # 锁定父级 ID 为 home
-    identifier = "novel"
-    name = "小说连载"
-    url = "/page/novel/"
-    weight = 3
-
-    # --- 原有的平级栏目保持不变 ---
-
 [[main]]
     identifier = "jiuwu"
     name = "旧物时光"
     url = "/page/jiuwu/"
-    weight = 2
+    weight = 3
     [main.params]
         icon = "shopping-bag"
 
@@ -43,7 +18,7 @@
     identifier = "bbs"
     name = "燕山论坛"
     url = "/page/bbs/"
-    weight = 3
+    weight = 2
     [main.params]
         icon = "messages"
 
