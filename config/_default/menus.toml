@@ -4,7 +4,7 @@
     url = "/"
     weight = 1
     [main.params]
-        icon = "home"
+        icon = "logo-s"
 
 [[main]]
     identifier = "bbs"
