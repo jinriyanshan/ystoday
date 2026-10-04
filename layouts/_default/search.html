@@ -27,7 +27,7 @@
 <!-- 纯前端搜索脚本 -->
 <script>
   // 加载 Hugo 生成的 JSON 索引
-  fetch('/index.json')
+  fetch('/ystoday/index.json')
     .then(response => response.json())
     .then(pages => {
       const searchInput = document.getElementById('search-input');
