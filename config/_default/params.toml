@@ -2,11 +2,11 @@
 favicon = "img/cat1.jpg"
 
 [footer]
-    customText = "燕山旧时光"
+    customText = "今日燕山"
 
 [sidebar]
     emoji = ""
-    subtitle = "回望过去，憧憬未来......"
+    subtitle = "在这里，我们看到燕山的昨天、今天和明天"
     avatar = "img/cat1.jpg" 
 
 [article]
