@@ -1,7 +1,7 @@
 # Change baseurl before deploy
 baseurl      = "https://ystoday.pages.dev/"
 languageCode = "zh-cn"
-title        = "燕山旧时光"
+title        = "今日燕山"
 
 # Theme i18n support
 # See all available values at https://github.com/CaiJimmy/hugo-theme-stack/tree/master/i18n
