@@ -1,5 +1,5 @@
 # 网站图标
-favicon = "img/jryslogo4.png"
+favicon = "img/jryslogo5.png"
 
 [footer]
     customText = "今日燕山"
@@ -7,7 +7,7 @@ favicon = "img/jryslogo4.png"
 [sidebar]
     emoji = ""
     subtitle = "在这里，我们看到燕山的昨天、今天和明天"
-    avatar = "img/jryslogo4.png" 
+    avatar = "img/jryslogo5.png" 
 
 [article]
     readingTime = false
