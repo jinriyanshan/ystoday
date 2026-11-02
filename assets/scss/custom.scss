@@ -11,6 +11,9 @@ body {
 .article-page,
 .article-list,
 .widget,
-section.article-content {
-    background: rgba(255,255,255,0.75) !important;
+section.article-content,
+article,
+section,
+main {
+    background: rgba(255,255,255,0.70) !important;
 }
