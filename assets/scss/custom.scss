@@ -1,19 +1,45 @@
-body {
-    background-image: url('/ystoday/img/background1.png') !important;
+/* 全站固定水印 */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image: url('/ystoday/img/background1.png');
     background-size: 25%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+
+    opacity: 0.15;
+
+    pointer-events: none;
+
+    z-index: 0;
 }
 
-.main-article,
+/* 所有页面内容浮在水印上面 */
+
+main,
+article,
+section,
+aside,
+footer,
 .article-content,
 .article-page,
 .article-list,
+.main-article,
 .widget,
-section.article-content,
-article,
-section,
-main {
-    background: rgba(255,255,255,0.70) !important;
+main.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* 半透明卡片 */
+
+.article-content,
+.main-article,
+.widget,
+article {
+    background: rgba(255,255,255,0.75) !important;
 }
